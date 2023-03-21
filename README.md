@@ -8,4 +8,4 @@
 + 建立一個檔案 `.env`，並在 TOKEN 後面填上 BOT 的 TOKEN，在 ALARM_CHANNEL 後面填上要設定為平原時鐘的頻道
 + 若你是使用replit 線上IDE運行機器人 請用 Secrets 建立 TOKEN 與 ALARM_CHANNEL , 並在 Value 填入相應資訊
 ## Original author's project 
-原作者專案：[EidolonDiscordClock](https://github.com/penut85420/EidolonDiscordClock) (Github)
+[EidolonDiscordClock](https://github.com/penut85420/EidolonDiscordClock) by [penut85420](https://github.com/penut85420)
