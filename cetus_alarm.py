@@ -40,6 +40,8 @@ class CetusAlarm:
         embed.add_field(name=self._generate_status(), value="近期入夜時間", inline=False)
         embed.add_field(name=self._generate_today_name(), value=self._generate_schedule(today=True), inline=False)
         embed.add_field(name=self._generate_tomorrow_name(), value=self._generate_schedule(today=False), inline=False)
+        embed.timestamp = datetime.now(timezone.utc)
+        embed.set_footer(text="資訊更新時間")
         return embed
 
     def _is_night(self):
@@ -63,8 +65,9 @@ class CetusAlarm:
         minutes_left = int((self._next_night() - self._current_time()).total_seconds() // 60)
         minutes_left -= 100 if not is_night else 0
         next_night_time = self._next_night().strftime('%H:%M')
-        current_time_str = self._current_time().strftime('%H:%M')
-        return f"夜靈平野還有 {minutes_left} 分鐘{state}\n現在時間：{current_time_str}\n下個夜晚：{next_night_time}"
+        # current_time_str = self._current_time().strftime('%H:%M')
+        # return f"夜靈平野還有 {minutes_left} 分鐘{state}\n現在時間：{current_time_str}\n下個夜晚：{next_night_time}"
+        return f"夜靈平野還有 {minutes_left} 分鐘{state}\n下個夜晚：{next_night_time}"
 
     def _generate_today_name(self):
         """
