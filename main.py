@@ -100,7 +100,7 @@ class EidolonClient(discord.Client):
         if last_msg.author == self.user:
             if not self._compare_embeds(last_msg.embeds[0], embed):
                 await last_msg.edit(embed=embed)
-                logger.info(f"更新了頻道 {channel.id} 的嵌入訊息")
+                logger.debug(f"更新了頻道 {channel.id} 的嵌入訊息")
         else:
             # 若最後訊息不是機器人發送的，發送新的嵌入訊息
             msg = await channel.send(embed=embed)
@@ -124,7 +124,7 @@ def set_logger():
     # 配置終端輸出
     logger.add(
         sys.stdout,
-        level="INFO",  # 根據 DEBUG 模式調整
+        level="DEBUG",  # 調整這裡的層級可以控制顯示的部分，目前設定 DEBUG
         colorize=True  # 保留彩色輸出
     )
 
